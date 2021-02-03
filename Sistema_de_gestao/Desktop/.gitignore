@@ -1,2 +1,9 @@
 /venv
 */__pycache__
+
+*.pyc
+*~
+__pycache__
+venv
+products.db
+.DS_Store
