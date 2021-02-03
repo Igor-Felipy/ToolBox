@@ -9,6 +9,32 @@ except:
     conn = sqlite3.connect('products.db')
     cursor = conn.cursor()
 
+
+def uniqueConsult(id):
+    try:
+        data = cursor.execute("""
+        SELECT * 
+        FROM  products
+        WHERE id = ?
+        """,(id))
+        conn.commit()
+        return(data)
+    except:
+        return("error")
+
+def consult():
+    try:
+        data = cursor.execute("""
+        SELECT * 
+        FROM  products
+        ORDER BY id
+        """)
+        conn.commit()
+        return(data)
+    except:
+        return("error")
+
+
 def insertProduct(name,qtd):
     try:
         cursor.execute("""
