@@ -82,3 +82,46 @@ def deleteProduct(id):
         return("product deleted")
     except:
         return("error")
+
+
+def quantityPlus(id):
+    try:
+        qtd = cursor.execute("""
+        SELECT qtd 
+        FROM  products
+        WHERE id = ?
+        """,(id))
+
+        qtd = qtd + 1
+
+        cursor.execute("""
+        UPDATE products
+        SET qtd = ?
+        WHERE id=?
+        """,(qtd,id))
+
+        conn.commit()
+        return("product deleted")
+    except:
+        return("error")
+
+def quantityLess(id):
+    try:
+        qtd = cursor.execute("""
+        SELECT qtd 
+        FROM  products
+        WHERE id = ?
+        """,(id))
+
+        qtd = qtd - 1
+
+        cursor.execute("""
+        UPDATE products
+        SET qtd = ?
+        WHERE id=?
+        """,(qtd,id))
+
+        conn.commit()
+        return("product deleted")
+    except:
+        return("error")
