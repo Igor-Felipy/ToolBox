@@ -9,4 +9,16 @@ sortValues(preco maior menor vice versa)
 foto
 nome
 preco
+<<<<<<< HEAD
 descricao
+=======
+descricao
+
+voteCount (avaliacao produto)
+voteAverage (media avaliacao)
+score (total avaliado usuarios)
+
+
+
+
+>>>>>>> c27eb76e1f4520c42c7f7277c761f2c9902ee186
