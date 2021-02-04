@@ -1,36 +1,3 @@
-###signup###
-userID (username)
-firstName(nome)
-lastName
-age(idade)
-gender(genero)
-country(pais)
-city(cidade)
-address(endereco)
-number(numero)
-zipcode(cep)
-
-email
-password(senha)
-
-###signin###
-database(db usuario)
-userLikes
-userComments
-userOrderID
-
-###user area###
-orderID (compras realizadas)
-productID (item comprado)
-
-frequency (produtos adquiridos com outros)
-contentFilter (localizacao,idade,genero)
-recommendSystem (recomendar baseado no filtro)
-
-
-favorite (prod favorito)
-
-###produtos###
 productName(nome do item)
 productPrice(preco item)
 productOverview(descricao produto)
@@ -43,10 +10,3 @@ foto
 nome
 preco
 descricao
-
-voteCount (avaliacao produto)
-voteAverage (media avaliacao)
-score (total avaliado usuarios)
-
-
-
