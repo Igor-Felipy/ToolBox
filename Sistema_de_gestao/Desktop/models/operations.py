@@ -1,5 +1,6 @@
 import sqlite3
 from db import create_table
+from datetime import datetime
 
 try:
     conn = sqlite3.connect('products.db')
@@ -35,24 +36,25 @@ def consult():
         return("error")
 
 
-def insertProduct(name,qtd):
+def insertProduct(name,qtt,):
     try:
+        date = str(datetime.now().strftime('%d-%m-%Y %H:%M'))
         cursor.execute("""
-        INSERT INTO products (name, qtd)
-        VALUES (?,?)
-        """,(name,qtd))
+        INSERT INTO products (name, qtt, created_in)
+        VALUES (?,?,?)
+        """,(name,qtt,date))
         conn.commit()
         return("Product created!")
     except:
         return("error")
 
-def updateQtd(id,qtd):
+def updateQtt(id,qtt):
     try:
         cursor.execute("""
         UPDATE products
-        SET qtd = ?
+        SET qtt = ?
         WHERE id=?
-        """,(qtd,id))
+        """,(qtt,id))
         conn.commit()
         return("quantity updated")
     except:
@@ -86,19 +88,19 @@ def deleteProduct(id):
 
 def quantityPlus(id):
     try:
-        qtd = cursor.execute("""
-        SELECT qtd 
+        qtt = cursor.execute("""
+        SELECT qtt 
         FROM  products
         WHERE id = ?
         """,(id))
 
-        qtd = qtd + 1
+        qtt = qtt + 1
 
         cursor.execute("""
         UPDATE products
-        SET qtd = ?
+        SET qtt = ?
         WHERE id=?
-        """,(qtd,id))
+        """,(qtt,id))
 
         conn.commit()
         return("product deleted")
@@ -107,19 +109,19 @@ def quantityPlus(id):
 
 def quantityLess(id):
     try:
-        qtd = cursor.execute("""
-        SELECT qtd 
+        qtt = cursor.execute("""
+        SELECT qtt 
         FROM  products
         WHERE id = ?
         """,(id))
 
-        qtd = qtd - 1
+        qtt = qtt - 1
 
         cursor.execute("""
         UPDATE products
-        SET qtd = ?
+        SET qtt = ?
         WHERE id=?
-        """,(qtd,id))
+        """,(qtt,id))
 
         conn.commit()
         return("product deleted")

@@ -14,7 +14,7 @@ def create_table():
         kind TEXT,
         price INTEGER,
         created_in TEXT NOT NULL,
-        last_sell TEXT,
+        last_movimentation TEXT,
     );
     """)
 
