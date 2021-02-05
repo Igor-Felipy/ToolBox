@@ -10,7 +10,11 @@ def create_table():
     CREATE TABLE stock (
         id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
-        qtd INTEGER NOT NULL
+        qtt INTEGER NOT NULL,
+        kind TEXT,
+        price INTEGER,
+        created_in TEXT NOT NULL,
+        last_sell TEXT,
     );
     """)
 
